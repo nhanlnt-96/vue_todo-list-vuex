@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="input-todo">
+    <input-todo></input-todo>
+  </div>
+  <div class="todo-container">
+    <display-todo></display-todo>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import InputTodo from '@/components/InputTodo.vue';
+import DisplayTodo from '@/components/DisplayTodo.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
+    DisplayTodo,
+    InputTodo
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.input-todo {
+  height: 50px;
+}
+
+.todo-container {
+  height: calc(100% - 50px);
+}
+</style>

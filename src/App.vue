@@ -1,9 +1,14 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav>
+    <div id="nav" class="level-right">
+      <router-link to="/">Home</router-link>
+      |
+      <router-link to="/about">About</router-link>
+    </div>
+  </nav>
+  <div class="container is-fluid container-height">
+    <router-view />
   </div>
-  <router-view/>
 </template>
 
 <style lang="scss">
@@ -16,7 +21,9 @@
 }
 
 #nav {
-  padding: 30px;
+  height: 60px;
+  padding: 0 20px;
+  border-bottom: 1px solid #2c3e50;
 
   a {
     font-weight: bold;
@@ -26,5 +33,10 @@
       color: #42b983;
     }
   }
+}
+
+.container-height {
+  height: calc(100vh - 60px);
+  padding: 20px !important;
 }
 </style>
